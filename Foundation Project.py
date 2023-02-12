@@ -17,5 +17,3 @@ cloud_services.pop(0)
 # Print the updated list and its length
 print(cloud_services)
 print(len(cloud_services))
-
-##helllo
