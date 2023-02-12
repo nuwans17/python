@@ -6,7 +6,7 @@ import os
 req_path = os.getcwd()
 all_f_ds = os.listdir(req_path)
 
-
+# define the empty ;ist
 req_files = []
 for each_files in all_f_ds:
     the_stats = os.stat(each_files)
