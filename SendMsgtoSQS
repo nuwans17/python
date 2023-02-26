@@ -1,0 +1,19 @@
+import json
+import boto3
+
+def lambda_handler(event, context):
+    from datetime import datetime
+    sqs = boto3.client("sqs")
+    
+    current_time = datetime.now()
+    formatted_time = current_time.strftime("%H:%M:%S %p")
+    
+    response = sqs.send_message(
+    QueueUrl="https://sqs.us-east-1.amazonaws.com/905169972855/WK15SQS",
+    MessageBody=formatted_time
+    )
+    
+    return {
+        'statusCode': 200,
+        'body': json.dumps(response)
+    }
